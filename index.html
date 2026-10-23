@@ -1,380 +1,294 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>A Little Autumn in Korea 🍂</title>
-<meta name="description" content="Our little autumn reunion in Seoul & Songdo · 25–26 October 2026">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍁</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#fbf6ee;
-  --paper:#fffdf9;
-  --ink:#2e2a24;
-  --muted:#7a6f63;
-  --line:#ecdfcf;
-  --maple:#c2502e;
-  --amber:#e09a3b;
-  --pine:#3f6b53;
-  --pine-soft:#e6efe7;
-  --amber-soft:#fbeedb;
-  --shadow:0 10px 30px rgba(120,70,30,.08);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--ink);
-  font:16px/1.7 "Nunito",system-ui,-apple-system,"Segoe UI",sans-serif;
-  -webkit-font-smoothing:antialiased;
-}
-a{color:inherit}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbf6ef">
+  <title>A Little Autumn in Korea 🍂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fbf6ef; --card: #ffffff; --ink: #2b2420; --muted: #7a6d63; --line: #ece2d6;
+      --accent: #c2541b; --accent-soft: #fbe7d8; --forest: #3f6b4a; --forest-soft: #e4efe5;
+      --naver: #03c75a;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: 'Inter', 'Noto Sans KR', sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
 
-/* ---------- falling leaves ---------- */
-.leaves{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
-.leaf{position:absolute;top:-40px;font-size:20px;opacity:.75;animation:fall linear infinite}
-@keyframes fall{
-  0%{transform:translate(0,0) rotate(0)}
-  50%{transform:translate(40px,50vh) rotate(160deg)}
-  100%{transform:translate(-20px,105vh) rotate(320deg)}
-}
-@media (prefers-reduced-motion:reduce){.leaves{display:none}}
+    header { padding: 56px 0 28px; text-align: center; }
+    h1 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(2rem, 7vw, 2.9rem); line-height: 1.1; margin: 0; letter-spacing: -.01em; }
+    h1 em { color: var(--accent); font-weight: 500; }
+    .sub { margin: 12px 0 0; font-weight: 600; color: var(--muted); letter-spacing: .04em; font-size: .9rem; }
+    .intro { margin: 14px auto 0; max-width: 480px; color: var(--muted); font-size: .95rem; }
 
-/* ---------- hero ---------- */
-header{
-  position:relative;z-index:1;text-align:center;
-  padding:90px 20px 110px;
-  background:
-    radial-gradient(circle at 15% 20%,rgba(224,154,59,.35),transparent 45%),
-    radial-gradient(circle at 85% 30%,rgba(194,80,46,.28),transparent 45%),
-    radial-gradient(circle at 50% 100%,rgba(63,107,83,.25),transparent 55%),
-    linear-gradient(180deg,#f7e3c9,#fbf6ee);
-  overflow:hidden;
-}
-header::after{ /* soft wave into page */
-  content:"";position:absolute;left:0;right:0;bottom:-1px;height:60px;
-  background:var(--bg);
-  clip-path:ellipse(70% 100% at 50% 100%);
-}
-.eyebrow{
-  display:inline-block;padding:6px 14px;border-radius:99px;
-  background:rgba(255,255,255,.6);backdrop-filter:blur(4px);
-  font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--maple);
-}
-h1{
-  font-family:"Fraunces",Georgia,serif;font-weight:700;
-  font-size:clamp(44px,9vw,82px);line-height:1.02;margin:18px 0 14px;letter-spacing:-.02em;
-}
-h1 em{font-style:italic;font-weight:500;color:var(--maple)}
-.hero-sub{max-width:520px;margin:0 auto;color:#5d5246;font-size:17px}
-.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:24px}
-.chip{background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:6px 13px;font-size:14px;box-shadow:var(--shadow)}
+    .jump { position: sticky; top: 0; z-index: 10; background: rgba(251,246,239,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+    .jump .wrap { display: flex; gap: 8px; padding-top: 10px; padding-bottom: 10px; justify-content: center; }
+    .jump a { text-decoration: none; font-weight: 600; font-size: .9rem; padding: 8px 16px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); }
+    .jump a:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ---------- day nav ---------- */
-nav{
-  position:sticky;top:0;z-index:5;display:flex;justify-content:center;gap:8px;
-  padding:12px 16px;background:rgba(251,246,238,.85);backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);
-}
-nav a{
-  text-decoration:none;font-weight:800;font-size:14px;
-  padding:8px 16px;border-radius:99px;border:1px solid var(--line);background:var(--paper);
-  transition:transform .15s,background .15s;
-}
-nav a:hover{transform:translateY(-1px);background:var(--amber-soft)}
+    section.day { padding: 36px 0 8px; scroll-margin-top: 60px; }
+    .day-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .day-head h2 { font-family: 'Fraunces', serif; font-size: 1.6rem; margin: 0; }
+    .day-head .date { color: var(--muted); font-weight: 600; font-size: .9rem; }
 
-/* ---------- layout ---------- */
-main{position:relative;z-index:1;max-width:820px;margin:auto;padding:28px 16px 70px}
-.day{
-  background:var(--paper);border:1px solid var(--line);border-radius:28px;
-  margin:28px 0;box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:70px;
-}
-.day-head{padding:28px 28px 22px;position:relative}
-.day.forest .day-head{background:linear-gradient(135deg,#e3eee4,#f3f7f1)}
-.day.songdo .day-head{background:linear-gradient(135deg,#fbe7d2,#fdf4e8)}
-.day-num{
-  position:absolute;right:22px;top:14px;
-  font-family:"Fraunces",serif;font-size:76px;line-height:1;opacity:.12;font-weight:700;
-}
-.day-label{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--maple)}
-.day.forest .day-label{color:var(--pine)}
-h2{font-family:"Fraunces",Georgia,serif;font-size:34px;margin:4px 0 6px;font-weight:700;letter-spacing:-.01em}
-.route{margin:0;color:var(--muted);font-size:15px}
-.route b{color:var(--ink);font-weight:600}
+    .timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+    .timeline::before { content: ''; position: absolute; left: 21px; top: 8px; bottom: 8px; width: 2px; background: var(--line); }
+    .item { position: relative; display: grid; grid-template-columns: 44px 1fr; gap: 12px; margin-bottom: 14px; }
+    .dot { width: 44px; height: 44px; border-radius: 50%; background: var(--card); border: 2px solid var(--line); display: grid; place-items: center; font-size: 1.2rem; z-index: 1; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; min-width: 0; }
+    .card .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+    .card h3 { margin: 0; font-size: 1rem; }
+    .time { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent); font-size: .9rem; white-space: nowrap; }
+    .card p { margin: 6px 0 0; color: var(--muted); font-size: .9rem; }
+    .tag { display: inline-block; font-size: .7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; margin-left: 6px; vertical-align: middle; }
+    .tag.ok { background: var(--forest-soft); color: var(--forest); }
+    .tag.tbc { background: var(--accent-soft); color: var(--accent); }
+    .tag.own { background: #efe9f7; color: #6a4c93; }
 
-/* ---------- timeline ---------- */
-.timeline{list-style:none;margin:0;padding:10px 28px 8px 28px;position:relative}
-.timeline::before{
-  content:"";position:absolute;left:99px;top:26px;bottom:36px;width:2px;
-  background:repeating-linear-gradient(var(--line) 0 6px,transparent 6px 12px);
-}
-.stop{display:grid;grid-template-columns:58px 26px 1fr;gap:6px;padding:16px 0;align-items:start}
-.time{font-weight:800;font-size:15px;color:var(--maple);padding-top:3px;font-variant-numeric:tabular-nums}
-.forest .time{color:var(--pine)}
-.dot{
-  width:26px;height:26px;border-radius:50%;background:var(--paper);
-  border:2px solid var(--amber);display:grid;place-items:center;font-size:13px;position:relative;z-index:1;
-}
-.forest .dot{border-color:var(--pine)}
-.stop h3{margin:0 0 2px;font-size:17px;font-weight:800}
-.stop p{margin:0;color:#4f463d}
-.badge{
-  display:inline-block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
-  padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:2px;
-}
-.badge.ok{background:var(--pine-soft);color:var(--pine)}
-.badge.tbc{background:var(--amber-soft);color:#a3661a}
-.links{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.links a{
-  text-decoration:none;font-size:13px;font-weight:600;
-  padding:6px 12px;border-radius:99px;background:var(--pine-soft);color:var(--pine);
-  transition:background .15s,transform .15s;
-}
-.songdo .links a{background:var(--amber-soft);color:#9a5b16}
-.links a:hover{transform:translateY(-1px);filter:brightness(.96)}
+    .btns { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 4px; font-size: .8rem; font-weight: 600; text-decoration: none; padding: 6px 11px; border-radius: 8px; border: 1px solid var(--line); background: #faf7f3; }
+    .btn:hover { border-color: var(--accent); }
+    .btn.naver { background: var(--naver); border-color: var(--naver); color: #fff; }
+    .btn.naver:hover { opacity: .9; }
 
-.note{
-  margin:6px 28px 28px;padding:16px 18px;border-radius:16px;
-  background:var(--bg);border:1px dashed #dcc7ab;font-size:15px;
-}
-.note strong{color:var(--maple)}
+    .picks { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+    .pick { border: 1px solid var(--line); border-radius: 10px; padding: 10px; background: #faf7f3; }
+    .pick b { display: block; font-size: .9rem; margin-bottom: 6px; }
+    .pick .btn { width: 100%; justify-content: center; }
+    @media (max-width: 420px) { .picks { grid-template-columns: 1fr; } }
 
-/* ---------- packing + details ---------- */
-.extras{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
-.box{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px 24px;box-shadow:var(--shadow)}
-.box h3{font-family:"Fraunces",serif;font-size:22px;margin:0 0 10px}
-.box ul{margin:0;padding:0;list-style:none}
-.box li{padding:5px 0 5px 28px;position:relative}
-.box li::before{content:"🍂";position:absolute;left:0;top:5px;font-size:15px}
-.fine{font-size:13px;color:var(--muted);margin-top:10px}
+    .callout { border-radius: 14px; padding: 14px 16px; margin: 6px 0 14px 56px; font-size: .88rem; }
+    .callout.warn { background: var(--accent-soft); color: #7a3410; }
+    .callout.soft { background: var(--forest-soft); color: #2d4f36; }
+    @media (max-width: 480px) { .callout { margin-left: 0; } }
 
-footer{position:relative;z-index:1;text-align:center;color:var(--muted);padding:10px 20px 50px;font-size:15px}
-footer .heart{font-family:"Fraunces",serif;font-style:italic;font-size:22px;color:var(--maple);display:block;margin-bottom:4px}
+    .extras { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 28px 0 8px; }
+    @media (max-width: 600px) { .extras { grid-template-columns: 1fr; } }
+    .extras h2 { font-family: 'Fraunces', serif; font-size: 1.2rem; margin: 0 0 10px; }
+    .extras ul { margin: 0; padding: 0; list-style: none; font-size: .9rem; }
+    .extras li { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+    .extras li:last-child { border-bottom: 0; }
+    .extras label { display: flex; gap: 8px; align-items: flex-start; cursor: pointer; }
+    .extras input { accent-color: var(--accent); margin-top: 4px; }
 
-@media (max-width:560px){
-  header{padding:70px 16px 90px}
-  .day-head{padding:22px 20px 18px}
-  .timeline{padding:6px 18px}
-  .timeline::before{left:84px}
-  .stop{grid-template-columns:52px 24px 1fr}
-  .dot{width:24px;height:24px}
-  .note{margin:6px 18px 22px}
-  .extras{grid-template-columns:1fr}
-  h2{font-size:29px}
-}
-</style>
+    footer { text-align: center; padding: 36px 0 48px; color: var(--muted); font-size: .85rem; }
+    footer .love { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.05rem; color: var(--ink); margin-top: 6px; }
+  </style>
 </head>
 <body>
 
-<div class="leaves" aria-hidden="true"></div>
+  <header>
+    <div class="wrap">
+      <h1>A Little Autumn <em>in Korea</em> 🍁</h1>
+      <p class="sub">25–26 OCT 2026 · SEOUL &amp; SONGDO</p>
+      <p class="intro">Forest walks, comforting food, slow coffee, photo booths &amp; karaoke — and most importantly, time together ♡</p>
+    </div>
+  </header>
 
-<header>
-  <span class="eyebrow">25–26 Oct 2026 · Seoul & Songdo</span>
-  <h1>A Little Autumn<br><em>in Korea</em> 🍁</h1>
-  <p class="hero-sub">Forest walks, comforting food, slow coffee, photo booths &amp; karaoke — and most importantly, time together ♡</p>
-  <div class="chips">
-    <span class="chip">🌲 Uiryeong Trail</span>
-    <span class="chip">🥩 Korean BBQ</span>
-    <span class="chip">☕ Café catch-up</span>
-    <span class="chip">🎤 Noraebang</span>
-  </div>
-</header>
+  <nav class="jump">
+    <div class="wrap">
+      <a href="#day1">🌲 Day 1 · Sun</a>
+      <a href="#day2">☕ Day 2 · Mon</a>
+    </div>
+  </nav>
 
-<nav>
-  <a href="#day1">🌲 Day 1 · Sun</a>
-  <a href="#day2">☕ Day 2 · Mon</a>
-</nav>
+  <main class="wrap">
 
-<main>
+    <!-- ================= DAY 1 ================= -->
+    <section class="day" id="day1">
+      <div class="day-head">
+        <h2>🌲 Forest Day</h2>
+        <span class="date">Sunday, 25 October</span>
+      </div>
 
-  <!-- DAY 1 -->
-  <section class="day forest" id="day1">
-    <div class="day-head">
-      <span class="day-num">01</span>
-      <div class="day-label">Sunday · October 25</div>
-      <h2>Forest Day 🌲</h2>
-      <p class="route"><b>Anguk</b> → Gyohyeon → full Uiryeong Trail → <b>Ui-dong</b></p>
+      <ol class="timeline">
+        <li class="item">
+          <div class="dot">🍜</div>
+          <div class="card">
+            <div class="row"><h3>Lunch on your own <span class="tag own">Own</span></h3><span class="time">before 12:30</span></div>
+            <p>Have a good lunch before we meet — it's a long walk! If you're near Anguk, these are easy picks:</p>
+            <div class="btns">
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Flower+Rice+Restaurant+Anguk+Seoul">Flower Rice</a>
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Deungchon+Shabu+Kalguksu+Anguk">Shabu-shabu</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="dot">🚉</div>
+          <div class="card">
+            <div class="row"><h3>Meet at Anguk Station</h3><span class="time">12:30</span></div>
+            <p>We'll meet inside the ticket gates and leave together right away.</p>
+            <div class="btns">
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Anguk+Station+Seoul">📍 Map</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="dot">🚌</div>
+          <div class="card">
+            <div class="row"><h3>To the Gyohyeon trail entrance</h3><span class="time">12:30 – 14:00</span></div>
+            <p>Subway + bus, about 60–80 minutes.</p>
+            <div class="btns">
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Gyohyeon+Uiryeong+Trail+Entrance">📍 Trail entrance</a>
+              <a class="btn" target="_blank" rel="noopener" href="https://reservation.knps.or.kr/">National Park info</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="dot">🍁</div>
+          <div class="card">
+            <div class="row"><h3>Walk the full Uiryeong Trail <span class="tag ok">Booked</span></h3><span class="time">14:00 – 17:15</span></div>
+            <p>About 6–7 km, 3–3.5 hours on a gentle forest road — no steep climbs. We finish in Ui-dong.</p>
+            <div class="btns">
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Uiryeong+Trail+Ui-dong+entrance">📍 Finish</a>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="callout warn">
+        <b>🥾 Trail reminder</b><br>
+        Comfy shoes, a light jacket and water. Bring an <b>ID / passport</b> for the check at the entrance.
+        Check the entry cut-off time against the reservation confirmation — the sun sets around 17:45, so let's keep a steady pace.
+      </div>
+
+      <ol class="timeline">
+        <li class="item">
+          <div class="dot">🔥</div>
+          <div class="card">
+            <div class="row"><h3>Dinner in Ui-dong <span class="tag tbc">One of two</span></h3><span class="time">17:30</span></div>
+            <p>Around ₩30,000 per person. We'll pick one of these two:</p>
+            <div class="picks">
+              <div class="pick">
+                <b>Pick A</b>
+                <a class="btn naver" target="_blank" rel="noopener" href="https://naver.me/I55aBGwG">📍 Naver Map</a>
+              </div>
+              <div class="pick">
+                <b>Pick B</b>
+                <a class="btn naver" target="_blank" rel="noopener" href="https://naver.me/5XJu8bEY">📍 Naver Map</a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="dot">🏠</div>
+          <div class="card">
+            <div class="row"><h3>Head home</h3><span class="time">19:00</span></div>
+            <p>From Bukhansan Ui Station (Ui-Sinseol Line).</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ================= DAY 2 ================= -->
+    <section class="day" id="day2">
+      <div class="day-head">
+        <h2>☕ Slow Songdo Day</h2>
+        <span class="date">Monday, 26 October</span>
+      </div>
+
+      <ol class="timeline">
+        <li class="item">
+          <div class="dot">🏨</div>
+          <div class="card">
+            <div class="row"><h3>Meet at the hotel</h3><span class="time">14:30</span></div>
+            <p>After checkout, taxi to Songdo (depends on traffic).</p>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="dot">🌳</div>
+          <div class="card">
+            <div class="row"><h3>Songdo Central Park</h3><span class="time">15:00</span></div>
+            <p>An easy waterfront stroll.</p>
+            <div class="btns">
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Songdo+Central+Park+Incheon">📍 Park</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="dot">☕</div>
+          <div class="card">
+            <div class="row"><h3>Coffee &amp; catch-up at Matheson</h3><span class="time">16:00</span></div>
+            <p>Hours and desserts to be confirmed.</p>
+            <div class="btns">
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Matheson+Coffee+Songdo+Incheon">📍 Matheson Coffee</a>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <div class="callout soft">
+        <b>🌿 Flexible plan</b><br>
+        If you're tired after moving hotels, we can skip the walk and just enjoy a long café catch-up. No pressure!
+      </div>
+
+      <ol class="timeline">
+        <li class="item">
+          <div class="dot">🍲</div>
+          <div class="card">
+            <div class="row"><h3>Dinner with Miyeong <span class="tag tbc">TBC</span></h3><span class="time">18:30</span></div>
+            <p>Miyeong joins after work. Osuok is a possibility — checking if it's open on Mondays.</p>
+            <div class="btns">
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=restaurants+near+Incheon+National+University+Station">Dinner options nearby</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="item">
+          <div class="dot">🎤</div>
+          <div class="card">
+            <div class="row"><h3>Sticker photos + karaoke</h3><span class="time">20:00</span></div>
+            <p>Near Incheon National University Station.</p>
+            <div class="btns">
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=photo+booth+Songdo">📸 Photo booths</a>
+              <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=noraebang+Incheon+National+University+Station">🎤 Karaoke</a>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ================= EXTRAS ================= -->
+    <div class="extras">
+      <div class="card">
+        <h2>🎒 What to bring</h2>
+        <ul>
+          <li><label><input type="checkbox"> Comfy walking shoes</label></li>
+          <li><label><input type="checkbox"> Light jacket — autumn evenings get chilly</label></li>
+          <li><label><input type="checkbox"> Water &amp; a small snack for the trail</label></li>
+          <li><label><input type="checkbox"> ID / passport for the trail check</label></li>
+          <li><label><input type="checkbox"> T-money card for subway &amp; bus</label></li>
+          <li><label><input type="checkbox"> Phone charger (photo booth needs battery!)</label></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>🍂 Little details</h2>
+        <ul>
+          <li>We'll check menus with restaurants for dietary needs before ordering.</li>
+          <li>Restaurants are suggestions, not bookings.</li>
+          <li>Map links open place searches; the green buttons open Naver Map.</li>
+        </ul>
+      </div>
     </div>
 
-    <ol class="timeline">
-      <li class="stop">
-        <div class="time">10:50</div><div class="dot">👋</div>
-        <div>
-          <h3>Meet at Anguk Station</h3>
-          <p>Let's start the day together.</p>
-          <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Anguk+Station+Seoul" target="_blank" rel="noopener">📍 Map</a></div>
-        </div>
-      </li>
+  </main>
 
-      <li class="stop">
-        <div class="time">11:00</div><div class="dot">🍲</div>
-        <div>
-          <h3>Warm Korean lunch <span class="badge tbc">TBC</span></h3>
-          <p>Vegetable-rich hot pot, shabu-shabu or a wholesome Korean set meal.</p>
-          <div class="links">
-            <a href="https://www.google.com/maps/search/?api=1&query=Flower+Rice+Restaurant+Anguk+Seoul" target="_blank" rel="noopener">Flower Rice</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Deungchon+Shabu+Kalguksu+Anguk" target="_blank" rel="noopener">Shabu-shabu</a>
-          </div>
-        </div>
-      </li>
-
-      <li class="stop">
-        <div class="time">12:00</div><div class="dot">🚇</div>
-        <div>
-          <h3>To the Gyohyeon trail entrance</h3>
-          <p>Line 3 toward Gupabal, then a local bus and a short walk — about 60–80 min with connections.</p>
-          <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Gyohyeon+Uiryeong+Trail+Entrance" target="_blank" rel="noopener">📍 Trail entrance</a></div>
-        </div>
-      </li>
-
-      <li class="stop">
-        <div class="time">13:20</div><div class="dot">🥾</div>
-        <div>
-          <h3>Walk the full Uiryeong Trail <span class="badge ok">Booked</span></h3>
-          <p>About 6–7 km, roughly 3–3.5 hours with photos and breaks. We finish in Ui-dong.</p>
-          <div class="links">
-            <a href="https://reservation.knps.or.kr/" target="_blank" rel="noopener">National Park info</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Uiryeong+Trail+Ui-dong+entrance" target="_blank" rel="noopener">📍 Finish</a>
-          </div>
-        </div>
-      </li>
-
-      <li class="stop">
-        <div class="time">17:00</div><div class="dot">🥩</div>
-        <div>
-          <h3>Dinner in Ui-dong <span class="badge tbc">TBC</span></h3>
-          <p>Korean BBQ or a comforting Korean meal somewhere clean and cozy — around ₩30,000 per person.</p>
-          <div class="links">
-            <a href="https://www.google.com/maps/search/?api=1&query=Samgaksan+Charcoal+Grilled+Meat+Ui-dong" target="_blank" rel="noopener">Samgaksan BBQ</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Ui+Garden+Restaurant+Seoul" target="_blank" rel="noopener">Ui Garden</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=Sigol+Ssambap+Ui-dong" target="_blank" rel="noopener">Ssambap</a>
-          </div>
-        </div>
-      </li>
-
-      <li class="stop">
-        <div class="time">18:30</div><div class="dot">🏠</div>
-        <div>
-          <h3>Head home</h3>
-          <p>Rest up for tomorrow!</p>
-        </div>
-      </li>
-    </ol>
-
-    <div class="note"><strong>Trail reminder ·</strong> Comfy shoes, a light jacket and water. Check entrance rules and the cut-off time against the reservation confirmation. Times are approximate.</div>
-  </section>
-
-  <!-- DAY 2 -->
-  <section class="day songdo" id="day2">
-    <div class="day-head">
-      <span class="day-num">02</span>
-      <div class="day-label">Monday · October 26</div>
-      <h2>Slow Songdo Day ☕</h2>
-      <p class="route">A relaxed afternoon, with <b>Miyeong</b> joining us after work.</p>
+  <footer>
+    <div class="wrap">
+      <div>Draft itinerary — transport times and opening hours may change.</div>
+      <div class="love">see you soon ♡ Made with love for our little autumn reunion 🍂</div>
     </div>
+  </footer>
 
-    <ol class="timeline">
-      <li class="stop">
-        <div class="time">14:30</div><div class="dot">🧳</div>
-        <div>
-          <h3>Meet at the hotel</h3>
-          <p>After checkout and a little rest, we'll take a taxi together to Songdo (traffic permitting).</p>
-        </div>
-      </li>
-
-      <li class="stop">
-        <div class="time">15:00</div><div class="dot">🌳</div>
-        <div>
-          <h3>Songdo Central Park</h3>
-          <p>Easy waterfront stroll, skyline views and photos.</p>
-          <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Songdo+Central+Park+Incheon" target="_blank" rel="noopener">📍 Park</a></div>
-        </div>
-      </li>
-
-      <li class="stop">
-        <div class="time">16:00</div><div class="dot">☕</div>
-        <div>
-          <h3>Coffee &amp; catch-up at Matheson</h3>
-          <p>Sit down, sip coffee and chat. Dessert options and Monday hours to be confirmed.</p>
-          <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=Matheson+Coffee+Songdo+Incheon" target="_blank" rel="noopener">📍 Matheson Coffee</a></div>
-        </div>
-      </li>
-
-      <li class="stop">
-        <div class="time">18:30</div><div class="dot">🍚</div>
-        <div>
-          <h3>Dinner with Miyeong <span class="badge tbc">TBC</span></h3>
-          <p>She joins us after work. Osuok is a possibility — Monday opening needs checking.</p>
-          <div class="links"><a href="https://www.google.com/maps/search/?api=1&query=restaurants+near+Incheon+National+University+Station" target="_blank" rel="noopener">Dinner options nearby</a></div>
-        </div>
-      </li>
-
-      <li class="stop">
-        <div class="time">20:00</div><div class="dot">🎤</div>
-        <div>
-          <h3>Sticker photos + karaoke</h3>
-          <p>Photo booth and noraebang near Incheon National University Station — a fun Korean-style finale!</p>
-          <div class="links">
-            <a href="https://www.google.com/maps/search/?api=1&query=photo+booth+Songdo" target="_blank" rel="noopener">📸 Photo booths</a>
-            <a href="https://www.google.com/maps/search/?api=1&query=noraebang+Incheon+National+University+Station" target="_blank" rel="noopener">🎤 Karaoke</a>
-          </div>
-        </div>
-      </li>
-    </ol>
-
-    <div class="note"><strong>Flexible plan ·</strong> If you're tired after moving hotels, we can skip the walk and just enjoy a long café catch-up. No pressure!</div>
-  </section>
-
-  <!-- EXTRAS -->
-  <div class="extras">
-    <div class="box">
-      <h3>What to bring</h3>
-      <ul>
-        <li>Comfy walking shoes</li>
-        <li>Light jacket — autumn evenings get chilly</li>
-        <li>Water &amp; a small snack for the trail</li>
-        <li>T-money card for subway &amp; bus</li>
-        <li>Phone charger (photo booth needs battery!)</li>
-      </ul>
-    </div>
-    <div class="box">
-      <h3>Little details 💛</h3>
-      <ul>
-        <li>We'll check menus with restaurants for dietary needs before ordering.</li>
-        <li>Restaurants are suggestions, not bookings.</li>
-        <li>Map links open place searches.</li>
-      </ul>
-      <p class="fine">Draft itinerary — transport times and opening hours may change.</p>
-    </div>
-  </div>
-
-</main>
-
-<footer>
-  <span class="heart">see you soon ♡</span>
-  Made with love for our little autumn reunion 🍂
-</footer>
-
-<script>
-(function(){
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var box = document.querySelector('.leaves');
-  var icons = ['🍂','🍁','🍂','🍁','🍃'];
-  var count = window.innerWidth < 560 ? 8 : 14;
-  for (var i = 0; i < count; i++) {
-    var s = document.createElement('span');
-    s.className = 'leaf';
-    s.textContent = icons[i % icons.length];
-    s.style.left = Math.random() * 100 + 'vw';
-    s.style.fontSize = (14 + Math.random() * 14) + 'px';
-    s.style.animationDuration = (12 + Math.random() * 14) + 's';
-    s.style.animationDelay = (-Math.random() * 20) + 's';
-    s.style.opacity = (0.35 + Math.random() * 0.45).toFixed(2);
-    box.appendChild(s);
-  }
-})();
-</script>
 </body>
 </html>
